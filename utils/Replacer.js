@@ -25,6 +25,8 @@ const replace = (text, source_data = {}) => {
     tags.forEach(ftag => {
         new_text = new_text.replace(ftag.tag, ftag.resolver(source_data))
     })
+    
+    new_text = new_text.replace(/"/g,'\\"')
 
     return new_text
 }
